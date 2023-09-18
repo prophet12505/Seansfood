@@ -1,12 +1,12 @@
 <?php
-
+require('inc/loginfuncitons.php');
+require('inc/dbconnect.php');
 
     // process the login form submission
     //check if form was submitted with post
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //require 2 helper files to connect to DB and login
-        require('inc/loginfuncitons.php');
-        require('inc/dbconnect.php');
+        
 
         //check the login info
         //list: Assign variables as if they were an array
@@ -30,6 +30,9 @@
            
         }
         mysql_close($dbc);
+    }
+    else{
+        redirect_user('inc/loginpage.php');
     }
     //load login page
     include('inc/loginpage.php');
