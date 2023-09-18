@@ -18,5 +18,12 @@ echo("You should see a login form here");
 <div class="indent">
     <h1>Login<h1>
     <p>Please fill in the form below:</p>
-
+    <form name="loginform2" action="login.php" method="post">
+        <input type="text" placeholder="Email" name="email" required autocomplete="on" value="<?php if (isset($_POST['email'])) echo $_POST['email'];?>">
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="submit" name="submit" value="login">
+    </form>
 </div>
+
+<?php
+include('inc/footer.php');
