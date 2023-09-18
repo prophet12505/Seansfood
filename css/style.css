@@ -1,0 +1,788 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(51,51,51);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: block;
+}
+
+.navbar a.icon {
+  display: none;
+}
+
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.logo {
+  background-color: rgb(234,187,113);
+}
+
+a.active {
+  background-color: rgb(237,92,75);
+  color: rgb(0,0,0);
+}
+
+.logo img {
+  margin-top: -15px;
+}
+
+/* Style the input container */
+.navbar .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.navbar input[type=text], .navbar input[type=password] {
+  padding: 5px;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  width: 125px; /* adjust as needed (as long as it doesn't break the navbar) */
+}
+
+/* style the button inside the input container */
+.login-container button {
+  float: right;
+  padding: 5px 7px;
+  margin-top: 20px;
+  margin-right: 16px;
+  width: 87px;
+  background-color: rgb(81,129,100);
+  opacity: 0.9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.login-container button:hover {
+  opacity: 1;
+}
+
+#logoutlink {
+  margin-right: 25px;
+}
+
+.logout button {
+  width: 350px;
+  border: none;
+  border-radius: 4px;
+  outline: 0;
+  padding: 20px 50px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 18px;
+}
+.logout button a {
+   text-decoration: none;
+}
+
+.logout button:hover {
+  opacity: 0.6;
+  color: red;
+}
+
+/* index page video */
+#introVideo {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 0 30px 15px 30px;
+  display: block;
+  margin-bottom: 35px;
+}
+
+.main {
+  margin-top: 65px;
+  width: 100%;
+  display: block;
+}
+
+.main h1 {
+  margin: 0;
+}
+
+#carticon {
+  float: right;
+  padding: 15px 12px;
+  height: 100%;
+}
+
+#carticon:hover {
+  background-color: rgb(234,187,113);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  max-width: 300px;
+  height: 525px;
+  margin: 2%;
+  padding: 1%;
+  text-align: center;
+  font-family: arial;
+  float: left;
+  position: relative;
+}
+
+.card img {
+  max-width:180px;
+  max-height:180px;
+}
+
+.desc {
+	text-align: left;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.checked {
+  color: rgb(239,167,37);
+}
+
+.norating {
+  font-style: italic;
+}
+
+.card button {
+  position: absolute;
+  bottom: 5%;
+  left: 10%; 
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.card button a {
+   text-decoration: none;
+}
+
+.card button:hover {
+  opacity: 0.6;
+  color: red;
+}
+
+/* single product */
+.singleproduct {
+  width: 50%;
+  margin: auto;
+}
+
+.singleproduct h3 {
+  margin-left: 2%;
+}
+
+.singlecard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 60%;
+  height: 100%;
+  margin: 2%;
+  padding: 1%;
+  text-align: center;
+  font-family: arial;
+}
+
+.singlecard button {
+  position: relative;
+  bottom: 10%;
+  left: 0; 
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.singlecard button a {
+   text-decoration: none;
+}
+
+.singlecard button:hover {
+  opacity: 0.6;
+  color: red;
+}
+
+/* addcart */
+.addcart button {
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  margin: 15px;
+  padding: 20px 70px;
+  width: 350px;
+}
+
+#contbutton {
+  background-color: rgba(234,187,113,0.85);
+  width: 350px;
+}
+
+#contbutton:hover {
+  color: white;
+  background-color: rgb(234,187,113);
+}
+
+#editaccount {
+  background-color: rgb(81,129,100);
+  color: white;
+  width: 300px;
+}
+
+#editaccount:hover {
+  background-color: rgb(234,187,113);
+  color: black;
+}
+
+#viewbutton {
+  background-color: rgb(51,51,51);
+  color: #f2f2f2;
+}
+
+#viewbutton:hover {
+  background: #ddd;
+  color: black;
+}
+
+.cart {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.emptycart {
+  min-height: 917px;
+}
+
+.emptycart p {
+  margin: 0;
+  padding: 50px;
+  font-size: 1.5rem;
+}
+
+.carterror{
+  color: rgb(237,92,75);
+}
+
+#cartdir {
+  text-align: center;
+}
+
+.cart table {
+  border-collapse: collapse;
+}
+
+.cart tr {
+  border-bottom: 1px solid black;
+}
+
+.cart td {
+  text-align: center;
+}
+
+.cart input[type=number] {
+  text-align: center;
+}
+
+#cartbuttons {
+  text-align: center;
+}
+
+#updatecart {
+  margin: 15px;
+  padding: 20px 70px;
+  font-size: 18px;
+  outline: none;
+}
+
+#updateuser {
+  font-size: 18px;
+  background-color: rgba(81,129,100,0.85);
+  color: white;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.back button {
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  margin: 15px 0;
+  padding: 22px;
+  width: 350px;
+}
+
+#deleteuser {
+  background-color: rgb(51,51,51);
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 15px;
+  padding: 22px 50px;
+  width: 350px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#useraccount, #letshop {
+  background-color: rgb(51,51,51);
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 15px;
+  padding: 22px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  width: 300px;
+}
+
+#username {
+  font-size: 18px;
+  padding: 15px;
+}
+
+#deldir {
+  padding-top: 35px;
+}
+
+#checkoutlink {
+  background-color: rgb(51,51,51);
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 15px;
+  padding: 20px 70px;
+  text-decoration: none;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+#checkoutlink:hover, #updateuser:hover, #deleteuser:hover, #useraccount:hover, #letshop:hover {
+  background-color: rgb(234,187,113);
+  color: black;
+}
+
+#autologinlink {
+  background-color: rgb(51,51,51);
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 15px;
+  padding: 22px 70px;
+  width: 350px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+}
+
+#totallabel {
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#total {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#successimg, #failimg {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.bg-image {
+  /* Otherwise images don't show */
+  min-height: 675px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Images used */
+.img1 { background-image: url("../img/about/meal_prep.jpg"); }
+.img2 { background-image: url("../img/about/food_prep.png"); }
+.img3 { background-image: url("../img/about/steak_prep.jpeg"); }
+.img4 { background-image: url("../img/about/wholegrains_prep.jpg"); }
+.img5 { background-image: url("../img/about/juice_prep.jpg"); }
+.img6 { background-image: url("../img/about/veggie_prep.jpg"); }
+
+/* position text in the middle of the about page/image */
+.bg-text {
+  background-color: rgb(237,92,75);
+  background-color: rgba(237,92,75, 0.80);
+  color: rgb(255,255,255);
+  border: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 65%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.bg-text h2 {
+  font-weight: bold;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.bg-text p {
+  text-align: left;
+}
+
+#intro {
+  text-align: center;
+}
+
+/* contact form */
+#contactForm {
+  width: 100%;
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], input[type=email], input[type=password], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  margin-top: 15px;
+  background-color: rgba(81,129,100,0.85);
+  color: white;
+  padding: 20px 70px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: rgb(81,129,100);
+}
+
+.indentdiv {
+  padding: 50px;
+}
+
+.indent {
+  padding: 0 50px;
+  font-size: 16px;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 25px 50px;
+}
+
+/* Registration Modal */
+/* Full-width input fields */
+.modal input[type=text], .modal input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+/* Add a background color when the inputs get focus */
+.modal input[type=text]:focus, .modal input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Set a style for all buttons */
+.modal button {
+  background-color: rgb(81,129,100);
+  opacity: 0.9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.modal button:hover {
+  opacity: 1;
+}
+/* Extra styles for the cancel button */
+.modal .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+/* Float cancel and signup buttons and add an equal width */
+.modal .cancelbtn, .modal .signupbtn {
+  float: left;
+  width: 50%;
+}
+/* Add padding to container elements */
+.modalcontainer {
+  padding: 25px;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 30; /* Sit on top */
+  left: 0;
+  top: 68px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 25px;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+footer {
+  min-height: 35px;
+  line-height: 35px;
+	clear: both;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+}
+
+/* different sizes of screens */
+@media screen and (max-width: 1024px) { 
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+  }
+  .navbar #navLinks {
+    display: none;
+  }
+  .navbar a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    float: none;
+    text-align: left;
+  }
+  .navbar a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .navbar .login-container {
+    float: none;
+  }
+  .navbar input[type=text], input[type=password], .navbar .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .navbar input[type=text], input[type=password] {
+    border: 1px solid #ccc;
+
+  }
+  .login-container input[type=password] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .main {
+    margin-top: 60px;
+  }
+  .container {
+    background-color: #f2f2f2;
+    padding: 50px 20px;
+    width: 100%;
+  }
+  #contactForm input[type=submit] {
+    width: 100%;
+  }
+  .indentdiv {
+    padding: 60px 0;
+  }
+  .indent {
+    padding: 10px;
+    font-size: 16px;
+  }
+  div h1 {
+    font-size: 26px;
+  }
+  section {
+    margin: 0 0 0 10%;
+  }
+  p.desc {
+    margin: 0 4%;
+    text-align: justify;
+  }
+  .card button {
+    bottom: 7%;
+    left: 0; 
+    width: 100%;
+  }
+  .bg-text h2 {
+    font-size: 60px;
+  }
+  .modal {
+    top: 60px;
+  }
+  .modal-content {
+    margin: 2% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+  }
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+  .cart {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2px;
+  }
+  #updatecart {
+    margin: 0;
+    width: 100%;
+  }
+  #checkoutlink {
+    margin: 15px 0;
+    width: 100%;
+  }
+  .imageSlot img {
+    width: 75px;
+    height: 75px;
+  }
+}
