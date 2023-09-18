@@ -7,7 +7,6 @@ if(!isset($_SESSION['userid'])){
 }
 //cancel the session
 $_SESSION=array();
-else {
 
-}
+session_destroy();
 ?>
