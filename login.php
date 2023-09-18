@@ -22,14 +22,14 @@ require('inc/dbconnect.php');
             $_SESSION['agent'] = sha1($_SERVER['HTTP_USER_AGENT']);
             //redirect user to a loggined page
             redirect_user('loggedin.php');
-            session_destroy();
+            //session_destroy();
         }
         else{
             //assign data to errors
             $errors=$data;
            
         }
-        mysql_close($dbc);
+        mysqli_close($dbc);
     }
     else{
         redirect_user('inc/loginpage.php');
