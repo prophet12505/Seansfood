@@ -16,7 +16,7 @@ title='View Cart'></i></a></h1></div>
 
 //check for one valid produc id
 if(isset($_GET['prod_id']) && filter_var($_GET['prod_id'],FILTER_VALIDATE_INT,
-array('min_range'=>1))){
+array("options"=>array('min_range'=>1)))){
     $prod_id=$_GET['prod_id'];
     // get the product id 
     //$prod_id=$_GET['prod_id'];
