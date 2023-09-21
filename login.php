@@ -22,7 +22,7 @@ require('inc/dbconnect.php');
             $_SESSION['agent'] = sha1($_SERVER['HTTP_USER_AGENT']);
           
             //
-            setcookie('firstname',$_SESSION['firstname']);
+            setcookie('firstname',$_SESSION['firstname'],time()+86400*30,"/");
             //redirect user to a loggined page
             redirect_user('loggedin.php');
             //session_destroy();
