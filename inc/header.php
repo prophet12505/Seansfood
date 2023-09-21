@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-camo.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-food.css">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://kit.fontawesome.com/ae87cba280.js" crossorigin="anonymous"></script>
   <link rel="icon" href="img/site/seanslogo.png" type="image/x-icon"> 
   <link rel="shortcut icon" href="img/site/seanslogo.png" type="image/x-icon"> 
