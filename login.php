@@ -20,6 +20,9 @@ require('inc/dbconnect.php');
             $_SESSION['firstname'] = $data['firstname'];
             $_SESSION['lastname'] = $data['lastname'];
             $_SESSION['agent'] = sha1($_SERVER['HTTP_USER_AGENT']);
+          
+            //
+            setcookie('firstname',$_SESSION['firstname']);
             //redirect user to a loggined page
             redirect_user('loggedin.php');
             //session_destroy();
