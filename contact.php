@@ -6,6 +6,10 @@
 	$page_title = "Contact Sean's Food | By Sean";
 	include 'inc/header.php';
 
+	echo "<div class='w3-container w3-teal'><h1>".$page_title."
+	<a href='viewcart.php'><i class='fas fa-shopping-cart' id='caticon' 
+	title='View Cart'></i></a></h1></div>";
+
 	// check if form has been submitted
 	$displayForm = TRUE; //flag to check if we need to show the form
 	$fullName = ""; //name

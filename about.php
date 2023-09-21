@@ -5,6 +5,9 @@
 	$self = basename($_SERVER['PHP_SELF']);
 	$page_title = "About Sean's Foods | By Sean";
 	include 'inc/header.php';
+	echo "<div class='w3-container w3-teal'><h1>".$page_title."
+<a href='viewcart.php'><i class='fas fa-shopping-cart' id='caticon' 
+title='View Cart'></i></a></h1></div> ";
 ?>
 	<!-- big background images -->
 	<div class="bg-image img1"></div>
