@@ -23,7 +23,14 @@
         $sql=substr($sql,0,-1);//strip last comma
         $sql.=") ORDER BY prod_name ASC";
         echo $sql;
-        
+        $result=mysqli_query($dbc,$sql);
+        //create a form with a table Layout for the cart
+        if(mysql_num_rows(result)>0){
+            mysqli_fetch_assoc($result);
+        }
+        else{
+
+        }
     }
 
     include("./inc/footer.php");
