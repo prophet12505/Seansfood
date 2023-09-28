@@ -1,11 +1,13 @@
 <?php
     //notice : you don't need to login to add to cart 
+    session_start();
     $page_title="added to cart";
     $self=basename($_SERVER['PHP_SELF']);
     require("./inc/header.php");
 
     #require("./inc/dbconnect.php");
-    session_start();
+    $_SESSION['test']=1;
+    print_r( $_SESSION['cart']);
 
 //     echo "<div class='w3-container w3-teal'><h1>".$page_title."
 // <a href='viewcart.php'><i class='fas fa-shopping-cart' id='caticon' 
@@ -14,7 +16,7 @@
 // ";
 
 
-//check for one valid produc id
+//check for one valid produc id, validate id// to be copied
 if(isset($_GET['prod_id']) && filter_var($_GET['prod_id'],FILTER_VALIDATE_INT,
 array("options"=>array('min_range'=>1)))){
         // get the product id 
@@ -28,7 +30,6 @@ array("options"=>array('min_range'=>1)))){
         echo '<div class="w3-container w3-teal"><h2>Added to Cart
         <a href="viewcart.php"><i class="fas fa-shopping-cart" id="carticon" title="View Cart"></i></a>
         </h2><p class="indent">Another item has been added to your shopping cart</p>';
-
     }
     else{
         // new product to put into cart or first time 
