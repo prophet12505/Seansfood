@@ -14,6 +14,17 @@
     if($_SESSION['cart']) {
         
     }
+    if($_SESSION['cart']){
+        require("./inc/dbconnect.php");
+        $sql="SELECT prod_id, prod_name, prod_price, prod_img from seansfoods_products WHERE prod_id IN (";
+        foreach($_SESSION['cart'] as $prod_id => $val){
+            $sql.=" $prod_id,";
+        }
+        $sql=substr($sql,0,-1);//strip last comma
+        $sql.=") ORDER BY prod_name ASC";
+        echo $sql;
+        
+    }
 
     include("./inc/footer.php");
 
