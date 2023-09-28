@@ -25,6 +25,12 @@
         echo $sql;
         $result=mysqli_query($dbc,$sql);
         //create a form with a table Layout for the cart
+        echo '<section class="cart"><p id="cartdir">To delete an item from your cart, you can click the remove link or enter 0 for quantity and click update cart below</p>
+        <form action="viewcart.php" method="post">
+        <table>
+        
+        
+        ';
         if(mysql_num_rows(result)>0){
             mysqli_fetch_assoc($result);
         }
