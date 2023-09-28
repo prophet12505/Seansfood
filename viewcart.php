@@ -27,7 +27,7 @@
         //create a form with a table Layout for the cart
         echo '<section class="cart"><p id="cartdir">To delete an item from your cart, you can click the remove link or enter 0 for quantity and click update cart below</p>
         <form action="viewcart.php" method="post">
-        <table>
+        <table class="cart">
         
         
         ';
