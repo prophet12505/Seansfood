@@ -1,4 +1,4 @@
-<?php
+i<?php
 //notice : you don't need to login to add to cart 
     //start the session and then include the header
     session_start();
@@ -28,15 +28,45 @@
         echo '<section class="cart"><p id="cartdir">To delete an item from your cart, you can click the remove link or enter 0 for quantity and click update cart below</p>
         <form action="viewcart.php" method="post">
         <table class="cart">
-        
-        
-        ';
-        if(mysql_num_rows(result)>0){
-            mysqli_fetch_assoc($result);
-        }
-        else{
+            <tr class="titles">
+            <th>Product</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th></th>
+        </tr>';
 
+        $total=0;
+        //loop through the cart
+        while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            //calculate subtotals and total
+            // $subtotal=$_SESSION['cart'][$row['prod_id']]['quantity']*$row['prod_price'];
+            $subtotal=$_SESSION['cart'][$row['prod_id']]['quantity']*$_SESSION['cart'][$row['prod_id']]['price'];
+            $total+=$subtotal;
+            $_SESSION['total']=$total;//put total into session for storage to DB later
+            // print the row
+            echo "<tr>
+            <td class='imageSlot'><a href='viewproduct.php?prod_id={$row['prod_id']}'><img src='{$row['prod_img']}' width='150'></a>
+            </td>
+            <td><a href='viewproduct.php?prod_id={$row['prod_id']}'>{$row['prod_name']}</a></td>
+            <td>\${$_SESSION['cart'][$row['prod_id']]['price']}</td>
+            ";
+
+
+            // echo '<tr>
+            // <td><img src="'.$row['prod_img'].'" class="cartimg"></td>
+            // <td>'.$row['prod_name'].'</td>
+            // <td>$'.$row['prod_price'].'</td>
+            // <td><input type="text" name="quantity['.$row['prod_id'].']" value="'.$_SESSION['cart'][$row['prod_id']]['quantity'].'"></td>';
         }
+
+        // if(mysql_num_rows(result)>0){
+        //     mysqli_fetch_assoc($result);
+        // }
+        // else{
+
+        // }
     }
 
     include("./inc/footer.php");
