@@ -62,7 +62,15 @@ i<?php
             // <td>$'.$row['prod_price'].'</td>
             // <td><input type="text" name="quantity['.$row['prod_id'].']" value="'.$_SESSION['cart'][$row['prod_id']]['quantity'].'"></td>';
         }
-
+        mysqli_close($dbc);
+        // print the total and close the table 
+        echo "<tr class='totalLine w3-camo-red'>
+            <td colspan='4'><p id='totallabel'>Total:</p></td>
+            <td><p id='total'>$". number_format($total,2)."</p></td>
+            <td></td>
+            </tr>
+            </table>
+            ";
         // if(mysql_num_rows(result)>0){
         //     mysqli_fetch_assoc($result);
         // }
@@ -72,5 +80,4 @@ i<?php
     }
 
     include("./inc/footer.php");
-
     ?>
